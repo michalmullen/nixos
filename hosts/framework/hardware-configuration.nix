@@ -39,4 +39,6 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # https://github.com/NixOS/nixos-hardware/tree/master/framework/13-inch/7040-amd
+  hardware.framework.amd-7040.preventWakeOnAC = true;
 }
