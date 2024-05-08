@@ -19,7 +19,7 @@
     overlays = import ./nix/overlays {inherit inputs;};
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs outputs;};
+      specialArgs = {inherit inputs;};
       modules = [
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
