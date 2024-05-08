@@ -95,7 +95,6 @@
       vscode
       obsidian
       spotify
-      anytype
       localsend
       thunderbird
     ];
