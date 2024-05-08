@@ -14,6 +14,10 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
+
+    # Your custom packages and modifications, exported as overlays
+    overlays = import ./nix/overlays {inherit inputs outputs;};
+
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
