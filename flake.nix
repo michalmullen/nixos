@@ -13,7 +13,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Your custom packages and modifications, exported as overlays
-    overlays = import ./nix/overlays {inherit inputs;};
+    overlays = import ./nix/overlays;
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
