@@ -23,6 +23,7 @@
       modules = [
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+        overlays
         ./hosts/framework/configuration.nix
       ];
     };
