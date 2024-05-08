@@ -11,19 +11,14 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    # Your custom packages and modifications, exported as overlays
-    overlays = import ./nix/overlays;
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
-
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-        inputs.overlays
         ./hosts/framework/configuration.nix
       ];
     };

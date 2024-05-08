@@ -1,4 +1,4 @@
-{ config, pkgs, outputs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -8,21 +8,9 @@
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  nixpkgs = {
-    overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.unstable-packages
-    ];
-    config = {
-      allowUnfree = true;
-      # Workaround for https://github.com/nix-community/home-manager/issues/2942
-      allowUnfreePredicate = _: true;
-    };
-  };
 
-  home.packages = with pkgs; [
-    git
-    unstalbe.anytype
+  home.packages = [
+    pkgs.git
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

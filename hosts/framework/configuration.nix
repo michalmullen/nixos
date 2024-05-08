@@ -136,6 +136,17 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
+  networking.firewall = {
+    enable = true;
+    allowedUDPPorts = [ 53317 ];
+    allowedTCPPorts = [ 53317 ];
+    allowedUDPPortRanges = [
+      { from = 49152; to = 65535; }
+    ];
+    allowedTCPPortRanges = [
+      { from = 49152; to = 65535; }
+    ];
+  };
   networking.firewall.allowedTCPPorts = [ 53317 ];
   networking.firewall.allowedUDPPorts = [ 53317 ];
   # Or disable the firewall altogether.
