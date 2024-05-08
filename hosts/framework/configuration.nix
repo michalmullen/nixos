@@ -97,6 +97,10 @@
     ];
   };
 
+  permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   home-manager.users.po252 = {
     imports = [
       ../../home/home.nix
