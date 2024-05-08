@@ -90,13 +90,17 @@
     packages = with pkgs; [
       firefox
       vscode
-    #  thunderbird
+      obsidian
+      spotify
+      anytype
+      localsend
     ];
   };
 
   home-manager.users.po252 = {
     imports = [
       ../../home/home.nix
+      ../../home/gnome.nix
     ];
   };
 
