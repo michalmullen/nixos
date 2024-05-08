@@ -16,10 +16,10 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
 
     # Your custom packages and modifications, exported as overlays
-    overlays = import ./nix/overlays {inherit inputs outputs;};
+    overlays = import ./nix/overlays {inherit inputs;};
 
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = {inherit inputs outputs;};
       modules = [
         inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
