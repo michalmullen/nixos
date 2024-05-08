@@ -56,6 +56,9 @@
     xkbVariant = "";
   };
 
+  # https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za
+  services.fwupd.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -105,6 +108,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    fwupd
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
