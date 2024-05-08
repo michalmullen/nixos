@@ -97,6 +97,7 @@
       spotify
       anytype
       localsend
+      thunderbird
     ];
   };
 

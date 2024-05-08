@@ -6,7 +6,7 @@
       disable-user-extensions = false;
       # to search for app name run the following:
       # dconf dump / | grep APP_NAME
-      favorite-apps = ["firefox.desktop" "spotify.desktop" "anytype.desktop" "code.desktop"];
+      favorite-apps = ["firefox.desktop" "spotify.desktop" "anytype.desktop" "code.desktop" "thunderbird.desktop"];
     };
     "org/gnome/shell/extensions/hidetopbar" = {
       enable-active-window = false;
