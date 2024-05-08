@@ -147,8 +147,6 @@
       { from = 49152; to = 65535; }
     ];
   };
-  networking.firewall.allowedTCPPorts = [ 53317 ];
-  networking.firewall.allowedUDPPorts = [ 53317 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
