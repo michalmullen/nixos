@@ -98,6 +98,7 @@
       localsend
       thunderbird
       anytype
+      discord
     ];
   };
 
