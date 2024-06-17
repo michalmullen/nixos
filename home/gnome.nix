@@ -21,6 +21,16 @@
       font-hinting = "slight";
       toolkit-accessibility = true;
     };
+    "org/gnome/shell/extensions/blur-my-shell" = {
+      "blacklist"="@as []";
+      "blur-on-overview"=true;
+      "brightness"="1.0";
+      "customize"=true;
+      "enable-all"=true;
+      "opacity"="250";
+      "sigma"="59";
+      "blur"=true;
+    };
     "org/gnome/desktop/wm/keybindings" = {
       activate-window-menu = "disabled";
       toggle-message-tray = "disabled";
