@@ -17,7 +17,7 @@
 
   boot.initrd.luks.devices."luks-b70cdad2-38a7-4c5a-b8d7-8c72e195a4d9".device = "/dev/disk/by-uuid/b70cdad2-38a7-4c5a-b8d7-8c72e195a4d9";
   networking.hostName = "framework"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
