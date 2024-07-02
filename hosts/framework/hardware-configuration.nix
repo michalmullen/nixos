@@ -41,4 +41,5 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   # https://github.com/NixOS/nixos-hardware/tree/master/framework/13-inch/7040-amd
   hardware.framework.amd-7040.preventWakeOnAC = true;
+  # hardware.enableRedistributableFirmware = true;
 }

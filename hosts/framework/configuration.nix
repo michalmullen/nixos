@@ -107,6 +107,7 @@
       anytype
       discord
       libreoffice
+      citrix_workspace # https://www.citrix.com/downloads/workspace-app/legacy-workspace-app-for-linux/
     ];
   };
 
