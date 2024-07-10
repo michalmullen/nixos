@@ -18,8 +18,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         inputs.home-manager.nixosModules.default
-        inputs.nixos-hardware.nixosModules.framework-13-7040-amd
-        ./hosts/framework/configuration.nix
+        ./hosts/prodesk/configuration.nix
       ];
     };
   };
