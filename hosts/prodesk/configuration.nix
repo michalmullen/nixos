@@ -107,7 +107,7 @@
   home-manager.users.po252 = {
     imports = [
       ../../home/home.nix
-      # ../../home/gnome.nix
+      ../../home/gnome.nix
     ];
   };
 

@@ -6,7 +6,8 @@
       disable-user-extensions = false;
       # to search for app name run the following:
       # dconf dump / | grep APP_NAME
-      favorite-apps = ["firefox.desktop" "spotify.desktop" "anytype.desktop" "code.desktop" "thunderbird.desktop"];
+      enabled-extensions = [ "blur-my-shell@aunetx" ];
+      favorite-apps = ["anytype.desktop" "firefox.desktop" "code.desktop" "spotify.desktop" "discord.desktop"];
     };
     "org/gnome/shell/extensions/hidetopbar" = {
       enable-active-window = false;
@@ -30,6 +31,14 @@
       "opacity"="250";
       "sigma"="59";
       "blur"=true;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      brightness = 0.6;
+      sigma = 30;
+    };
+    "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+      brightness = 0.6;
+      sigma = 30;
     };
     "org/gnome/desktop/wm/keybindings" = {
       activate-window-menu = "disabled";
