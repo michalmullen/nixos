@@ -11,4 +11,7 @@ nix flake update
 sudo nixos-rebuild switch --flake flake.nix#default
 # to cleanup
 nix-store --gc
+# update dconf config 
+# https://github.com/nix-community/dconf2nix
+dconf dump / | dconf2nix > ./home/dconf.nix
 ```

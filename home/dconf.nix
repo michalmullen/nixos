@@ -147,16 +147,28 @@ with lib.hm.gvariant;
       sidebar-page = "annotations";
       sidebar-size = 148;
       sizing-mode = "automatic";
-      window-ratio = mkTuple [ 1.038725362291607 0.7126568014219119 ];
+      window-ratio = mkTuple [ 1.038725 0.712657 ];
     };
 
     "org/gnome/evolution-data-server" = {
       migrated = true;
     };
 
+    "org/gnome/gnome-system-monitor" = {
+      current-tab = "resources";
+      show-dependencies = false;
+      show-whose-processes = "user";
+    };
+
+    "org/gnome/gnome-system-monitor/disktreenew" = {
+      col-6-visible = true;
+      col-6-width = 0;
+    };
+
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       experimental-features = [ "scale-monitor-framebuffer" ];
+      workspaces-only-on-primary = true;
     };
 
     "org/gnome/nautilus/preferences" = {
@@ -179,7 +191,31 @@ with lib.hm.gvariant;
       customize = true;
       enable-all = true;
       opacity = "250";
+      settings-version = 2;
       sigma = "59";
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
+      brightness = 0.6;
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
+      blur = true;
+      brightness = 0.6;
+      sigma = 30;
+      static-blur = true;
+      style-dash-to-dock = 0;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+      brightness = 0.6;
+      sigma = 30;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/window-list" = {
+      brightness = 0.6;
+      sigma = 30;
     };
 
     "org/gnome/shell/extensions/hidetopbar" = {

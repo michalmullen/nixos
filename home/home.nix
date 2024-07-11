@@ -11,6 +11,7 @@
 
   home.packages = [
     pkgs.git
+    pkgs.dconf2nix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
