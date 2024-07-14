@@ -12,6 +12,15 @@
   home.packages = [
     pkgs.git
     pkgs.dconf2nix
+    pkgs.firefox
+    pkgs.vscode
+    pkgs.obsidian
+    pkgs.spotify
+    pkgs.localsend
+    pkgs.kitty
+    pkgs.anytype
+    pkgs.discord
+    pkgs.libreoffice
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

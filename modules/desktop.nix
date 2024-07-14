@@ -1,3 +1,5 @@
+{ config, pkgs, ... }:
+
 {
   # Set your time zone.
   time.timeZone = "Europe/Prague";
@@ -53,67 +55,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.po252 = {
-    isNormalUser = true;
-    description = "Mitchell Mullen";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      vscode
-      obsidian
-      spotify
-      localsend
-      thunderbird
-      anytype
-      discord
-      libreoffice
-    ];
-  };
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
-
-
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    fwupd
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.tailscale.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall = {
-    enable = true;
-    allowedUDPPorts = [ 53317 ];
-    allowedTCPPorts = [ 53317 ];
-    allowedUDPPortRanges = [
-      { from = 49152; to = 65535; }
-    ];
-    allowedTCPPortRanges = [
-      { from = 49152; to = 65535; }
-    ];
-  };
 
 }
