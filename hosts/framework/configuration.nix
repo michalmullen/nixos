@@ -101,9 +101,12 @@
       anytype
       discord
       libreoffice
+      prismlauncher
+      citrix_workspace
     ];
   };
 
+  nixpkgs.config.allowBroken = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
