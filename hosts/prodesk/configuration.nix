@@ -91,7 +91,6 @@
       firefox
       vscode
       obsidian
-      spotify
       localsend
       transmission_4-qt
       kitty
@@ -100,6 +99,8 @@
       libreoffice
     ];
   };
+
+  _module.args.unstable-pkgs = import <nixos-unstable> {};
 
   services.minecraft-server = {
     enable = true;
@@ -121,11 +122,6 @@
     };
   };
 
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
-
   home-manager.users.po252 = {
     imports = [
       ../../home/home.nix
@@ -133,14 +129,23 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      packageOverrides = pkgs: {
+        unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
+      };
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
+  environment.systemPackages = [
+    pkgs.vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    pkgs.wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -157,6 +162,12 @@
   services.openssh.enable = true;
 
   services.tailscale.enable = true;
+
+  networking.interfaces.wlp1s0.useDHCP = false;
+  networking.interfaces.wlp1s0.ipv4.addresses = [{
+    address = "192.168.15.16";
+    prefixLength = 16;
+  }]; 
 
   # Open ports in the firewall.
   networking.firewall = {
