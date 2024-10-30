@@ -106,6 +106,9 @@
     ];
   };
 
+   virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
+
   nixpkgs.config.allowBroken = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
