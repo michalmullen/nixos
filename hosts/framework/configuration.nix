@@ -101,6 +101,7 @@
       anytype
       discord
       libreoffice
+      rpi-imager
       prismlauncher
       citrix_workspace
     ];
