@@ -9,6 +9,18 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+      permittedInsecurePackages = [
+        "electron-25.9.0"
+      ];
+      packageOverrides = pkgs: {
+        unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {config.allowUnfree = true;};
+      };      
+    };
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -98,7 +110,6 @@
       spotify
       localsend
       thunderbird
-      anytype
       discord
       libreoffice
       rpi-imager
@@ -110,11 +121,6 @@
    virtualisation.virtualbox.host.enable = true;
    users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
-  nixpkgs.config.allowBroken = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
-
   home-manager.users.po252 = {
     imports = [
       ../../home/home.nix
@@ -122,15 +128,13 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     fwupd
+    unstable.anytype
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -170,5 +174,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
