@@ -114,6 +114,7 @@
       libreoffice
       rpi-imager
       prismlauncher
+      remmina
       citrix_workspace
     ];
   };
