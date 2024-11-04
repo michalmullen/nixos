@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/services/searx.nix
     ];
   nixpkgs = {
     config = {
