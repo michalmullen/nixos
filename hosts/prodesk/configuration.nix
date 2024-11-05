@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/default/nixpkgs.nix
+      ./../../modules/services/minecraft.nix
     ];
 
   # Bootloader.
@@ -62,23 +64,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -101,26 +86,6 @@
   };
 
   _module.args.unstable-pkgs = import <nixos-unstable> {};
-
-  services.minecraft-server = {
-    enable = true;
-    eula = true; # set to true if you agree to Mojang's EULA: https://account.mojang.com/documents/minecraft_eula
-    declarative = true;
-
-    # see here for more info: https://minecraft.gamepedia.com/Server.properties#server.properties
-    serverProperties = {
-      server-port = 25565;
-      gamemode = "survival";
-      motd = "NixOS Minecraft server on Tailscale!";
-      max-players = 5;
-      enable-rcon = true;
-      # This password can be used to administer your minecraft server.
-      # Exact details as to how will be explained later. If you want
-      # you can replace this with another password.
-      "rcon.password" = "hunter2";
-      level-seed = "10292992";
-    };
-  };
 
   home-manager.users.po252 = {
     imports = [
