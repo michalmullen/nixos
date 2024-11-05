@@ -8,9 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/default/gnome.nix
+      ./../../modules/default/location.nix
       ./../../modules/default/networking.nix
       ./../../modules/default/nixpkgs.nix
-      ./../../modules/default/location.nix
       ./../../modules/services/searx.nix
     ];
 
@@ -29,13 +30,6 @@
 
   # enable flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   # https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za
   services.fwupd.enable = true;
