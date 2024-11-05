@@ -14,6 +14,7 @@
       ./../../modules/default/nix.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/services/searx.nix
+      ./../../modules/services/minecraft.nix
     ];
 
   # Bootloader.
