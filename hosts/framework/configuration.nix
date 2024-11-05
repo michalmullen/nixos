@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/default/networking.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/location.nix
       ./../../modules/services/searx.nix
@@ -25,9 +26,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # enable flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -57,16 +55,11 @@
       firefox
       unstable.vscode
       obsidian
-      spotify
       localsend
-      thunderbird
       discord
-      libreoffice
-      rpi-imager
-      prismlauncher
-      remmina
       citrix_workspace
       unstable.anytype
+      libreoffice
     ];
   };
 
@@ -86,6 +79,10 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     fwupd
+    remmina
+    rpi-imager
+    prismlauncher
+    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -97,26 +94,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.tailscale.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall = {
-    enable = true;
-    allowedUDPPorts = [ 53317 ];
-    allowedTCPPorts = [ 53317 ];
-    allowedUDPPortRanges = [
-      { from = 49152; to = 65535; }
-    ];
-    allowedTCPPortRanges = [
-      { from = 49152; to = 65535; }
-    ];
-  };
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

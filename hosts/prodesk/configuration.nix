@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/default/networking.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/location.nix
       ./../../modules/services/minecraft.nix
@@ -24,9 +25,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # enable flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -62,8 +60,6 @@
     ];
   };
 
-  _module.args.unstable-pkgs = import <nixos-unstable> {};
-
   home-manager.users.po252 = {
     imports = [
       ../../home/home.nix
@@ -98,33 +94,11 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  services.tailscale.enable = true;
-
   networking.interfaces.wlp1s0.useDHCP = false;
   networking.interfaces.wlp1s0.ipv4.addresses = [{
     address = "192.168.15.16";
     prefixLength = 16;
-  }]; 
-
-  # Open ports in the firewall.
-  networking.firewall = {
-    enable = true;
-    allowedUDPPorts = [ 53317 ];
-    allowedTCPPorts = [ 53317 25565 ];
-    allowedUDPPortRanges = [
-      { from = 49152; to = 65535; }
-    ];
-    allowedTCPPortRanges = [
-      { from = 49152; to = 65535; }
-    ];
-  };
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  }];
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
