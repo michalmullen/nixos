@@ -67,6 +67,7 @@
     rpi-imager
     prismlauncher
     spotify
+    reaper
   ];
 
   # This value determines the NixOS release from which the default
