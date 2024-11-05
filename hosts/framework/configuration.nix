@@ -22,23 +22,12 @@
 
   boot.initrd.luks.devices."luks-b70cdad2-38a7-4c5a-b8d7-8c72e195a4d9".device = "/dev/disk/by-uuid/b70cdad2-38a7-4c5a-b8d7-8c72e195a4d9";
   networking.hostName = "framework"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # enable flake
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za
   services.fwupd.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.po252 = {
@@ -78,16 +67,6 @@
     prismlauncher
     spotify
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -26,9 +26,6 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # enable flake
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -65,18 +62,6 @@
       ../../home/home.nix
       ../../home/gnome.nix
     ];
-  };
-
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      packageOverrides = pkgs: {
-        unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
-      };
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
-    };
   };
 
   # List packages installed in system profile. To search, run:
