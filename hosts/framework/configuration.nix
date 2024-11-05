@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/default/nixpkgs.nix
+      ./../../modules/default/location.nix
       ./../../modules/services/searx.nix
     ];
 
@@ -54,7 +55,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      vscode
+      unstable.vscode
       obsidian
       spotify
       localsend

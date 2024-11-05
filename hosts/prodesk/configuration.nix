@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/default/nixpkgs.nix
+      ./../../modules/default/location.nix
       ./../../modules/services/minecraft.nix
     ];
 
