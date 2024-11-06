@@ -8,9 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../modules/default/networking.nix
-      ./../../modules/default/nixpkgs.nix
+      ./../../modules/default/gnome.nix
       ./../../modules/default/location.nix
+      ./../../modules/default/networking.nix
+      ./../../modules/default/nix.nix
+      ./../../modules/default/nixpkgs.nix
+      ./../../modules/services/searx.nix
       ./../../modules/services/minecraft.nix
     ];
 
@@ -50,10 +53,8 @@
       obsidian
       localsend
       transmission_4-qt
-      kitty
       anytype
       discord
-      libreoffice
     ];
   };
 
