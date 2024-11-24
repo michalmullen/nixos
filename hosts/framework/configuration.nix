@@ -41,7 +41,6 @@
       obsidian
       localsend
       discord
-      citrix_workspace
       unstable.anytype
       libreoffice
       qtpass
@@ -54,7 +53,6 @@
   home-manager.users.po252 = {
     imports = [
       ../../home/home.nix
-      ../../home/gnome.nix
     ];
   };
 
