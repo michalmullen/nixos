@@ -13,7 +13,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs: {
     nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
@@ -27,6 +27,17 @@
       modules = [
         inputs.home-manager.nixosModules.default
         ./hosts/prodesk/configuration.nix
+      ];
+    };
+    nixosConfigurations.lenovo-p1 = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.po252 = import ./home/home.nix;
+        }
       ];
     };
   };

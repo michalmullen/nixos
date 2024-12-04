@@ -51,11 +51,11 @@
   #   LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${pkgs.glib.out}/lib";
   # };
 
-  programs.git = {
-    enable = true;
-    userName = "Mitchell Mullen";
-    userEmail = "michalmullen@gmail.com";
-  };
+#  programs.git = {
+#    enable = true;
+#    userName = "Mitchell Mullen";
+#    userEmail = "michalmullen@gmail.com";
+#  };
   
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
