@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -12,6 +12,8 @@
     pkgs.git
     pkgs.dconf2nix
     pkgs.tmux
+    pkgs.pass
+    pkgs.pinentry-curses
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -51,12 +53,12 @@
   #   LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${pkgs.glib.out}/lib";
   # };
 
-#  programs.git = {
-#    enable = true;
-#    userName = "Mitchell Mullen";
-#    userEmail = "michalmullen@gmail.com";
-#  };
-  
+  programs.git = {
+    enable = true;
+    userName = "Mitchell Mullen";
+    userEmail = "michalmullen@gmail.com";
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
