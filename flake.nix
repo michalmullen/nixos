@@ -37,6 +37,13 @@
         ./hosts/prodesk/configuration.nix
       ];
     };
+    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        inputs.home-manager.nixosModules.default
+        ./hosts/desktop/configuration.nix
+      ];
+    };
     homeConfigurations.lenovo-p1  = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { inherit system; };
 

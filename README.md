@@ -8,7 +8,7 @@ My personal nixos config.
 # to update packages
 nix flake update 
 # to apply changes (changes must be committed in git)
-sudo nixos-rebuild switch --flake flake.nix#default
+sudo nixos-rebuild switch --flake flake.nix#default --impure
 # to cleanup
 nix-store --gc
 # update dconf config 
