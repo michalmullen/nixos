@@ -12,6 +12,7 @@
     pkgs.git
     pkgs.dconf2nix
     pkgs.tmux
+    pkgs.starship
   ];
 
   programs.starship = {
