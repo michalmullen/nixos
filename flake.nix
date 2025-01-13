@@ -49,8 +49,7 @@
 
         modules = [
           # Specify the path to your home configuration here:
-          ./home/home.nix
-
+          ./home/work.nix
           {
             home = {
               homeDirectory = "/home/${username}";
