@@ -13,7 +13,7 @@
       ./../../modules/default/networking.nix
       ./../../modules/default/nix.nix
       ./../../modules/default/nixpkgs.nix
-      ./../../modules/services/searx.nix
+      ./../../modules/default/gnupg.nix
     ];
 
   # Bootloader.
@@ -44,6 +44,7 @@
       citrix_workspace
       unstable.anytype
       libreoffice
+      qtpass
     ];
   };
 

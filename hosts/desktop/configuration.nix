@@ -12,6 +12,7 @@
       ./../../modules/default/nix.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/kde.nix
+      ./../../modules/default/gnupg.nix
     ];
 
   # Bootloader.
@@ -21,9 +22,6 @@
 
   boot.initrd.luks.devices."luks-62176e26-d2bb-49da-a80e-c906d32c8086".device = "/dev/disk/by-uuid/62176e26-d2bb-49da-a80e-c906d32c8086";
   networking.hostName = "desktop"; # Define your hostname.
-
-  # https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za
-  services.fwupd.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -46,6 +44,7 @@
       wine64
       unstable.lutris
       protonup-qt
+      qtpass
     ];
   };
 

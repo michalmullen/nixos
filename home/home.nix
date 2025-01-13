@@ -13,7 +13,7 @@
     pkgs.dconf2nix
     pkgs.tmux
     pkgs.pass
-    pkgs.pinentry-curses
+    pkgs.nss
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -52,6 +52,12 @@
   #   GI_TYPELIB_PATH = "$GI_TYPELIB_PATH:${pkgs.gobject-introspection.out}/lib/girepository-1.0:${pkgs.gtk4.out}/lib/girepository-1.0:${pkgs.graphene.out}/lib/girepository-1.0:${pkgs.gdk-pixbuf.out}/lib/girepository-1.0:${pkgs.harfbuzz.out}/lib/girepository-1.0:${pkgs.pango.out}/lib/girepository-1.0";
   #   LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${pkgs.glib.out}/lib";
   # };
+
+  home.file.passff-host-workaround = {
+    target =
+      "${config.home.homeDirectory}/.mozilla/native-messaging-hosts/passff.json";
+    source = "${pkgs.passff-host}/share/passff-host/passff.json";
+  };
 
   programs.git = {
     enable = true;
