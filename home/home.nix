@@ -10,10 +10,9 @@
 
   home.packages = [
     pkgs.git
-    pkgs.dconf2nix
     pkgs.tmux
     pkgs.pass
-    pkgs.nss
+    pkgs.ghostty
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
