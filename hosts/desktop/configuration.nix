@@ -45,6 +45,7 @@
       unstable.lutris
       protonup-qt
       qtpass
+      rPackages.RobLox
     ];
   };
 

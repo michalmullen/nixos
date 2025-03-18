@@ -1,10 +1,9 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
-
 {
   services.minecraft-server = {
     enable = true;
     eula = true; # set to true if you agree to Mojang's EULA: https://account.mojang.com/documents/minecraft_eula
     declarative = true;
+    openFirewall = true;
 
     # see here for more info: https://minecraft.gamepedia.com/Server.properties#server.properties
     serverProperties = {
