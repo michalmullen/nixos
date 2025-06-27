@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -18,7 +18,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.luks.devices."luks-62176e26-d2bb-49da-a80e-c906d32c8086".device = "/dev/disk/by-uuid/62176e26-d2bb-49da-a80e-c906d32c8086";
   networking.hostName = "desktop"; # Define your hostname.
@@ -37,15 +36,13 @@
       obsidian
       localsend
       discord
-      unstable.anytype
       libreoffice
       kate
       wine
       wine64
-      unstable.lutris
+      lutris
       protonup-qt
       qtpass
-      rPackages.RobLox
     ];
   };
 
@@ -72,6 +69,7 @@
     prismlauncher
     spotify
     reaper
+    davinci-resolve
   ];
 
   # This value determines the NixOS release from which the default

@@ -16,7 +16,7 @@
       # Exact details as to how will be explained later. If you want
       # you can replace this with another password.
       "rcon.password" = "hunter2";
-      level-seed = "10292992";
+      level-seed = "10292912";
     };
   };
 }
