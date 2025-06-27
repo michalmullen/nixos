@@ -1,24 +1,24 @@
 { config, pkgs, ... }:
-let
-  nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-    # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-    ref = "nixos-25.05";
-  });
-  home-manager = import <home-manager> {
-    configuration.nixpkgs = import <nixpkgs-unstable> {};
-  };
-in
+# let
+#   nixvim = import (builtins.fetchGit {
+#     url = "https://github.com/nix-community/nixvim";
+#     # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+#     ref = "nixos-25.05";
+#   });
+#   home-manager = import <home-manager> {
+#     configuration.nixpkgs = import <nixpkgs-unstable> {};
+#   };
+# in
 {
   imports = [
     # Import the Home Manager module for Nixvim.
-    nixvim.homeModules.nixvim
+    # nixvim.homeModules.nixvim
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "adrew";
-  home.homeDirectory = "/home/adrew";
+  home.username = "po252";
+  home.homeDirectory = "/home/po252";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -53,16 +53,10 @@ in
     pkgs.gh
     pkgs.aichat
     pkgs.fzf
-    pkgs.spotify
 
     # applications
     pkgs.alacritty
     pkgs.brave
-    pkgs.vscode
-    pkgs.jetbrains.idea-ultimate
-    pkgs.jetbrains.pycharm-professional
-    pkgs.obsidian
-    pkgs.super-productivity
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -117,8 +111,8 @@ in
 
   programs.git = {
     enable = true;
-    userName = "po252";
-    userEmail = "andrew.mitchell.mullen@deutsche-boerse.com";
+    userName = "michalmullen";
+    userEmail = "michalmullen@gmail.com";
     aliases = {
       ci = "commit";
       co = "checkout";
@@ -139,7 +133,7 @@ in
         program = "${pkgs.tmux}/bin/tmux";
       };
     };
-    theme = "tokyo_night";
+    # theme = "tokyo_night";
   };
 
   programs.tmux = {
@@ -265,74 +259,74 @@ in
     };
   };
 
-  programs.nixvim = {
-    enable = true;
-    globals = {
-      mapleader = " ";
-      direnv_auto = 1;
-      direnv_silent_load = 0;
-    };
-    opts = {
-      number = true;         # Show line numbers
-      relativenumber = true; # Show relative line numbers
-      shiftwidth = 2;        # Tab width should be 2
-    };
-    plugins = {
-      trouble.enable = true;
-      bufferline.enable = true;
-      nvim-tree = {
-        enable = true;
-        openOnSetupFile = true;
-        autoReloadOnWrite = true;
-      };
-      gitsigns = {
-        enable = true;
-        settings = {
-          current_line_blame = true;
-          trouble = true;
-        };
-      };
-      treesitter = {
-        enable = true;
-        nixGrammars = true;
-        settings = {
-          highlight.enable = true;
-          indent.enable = true;
-        };
-      };
-      treesitter-context = {
-        enable = true;
-        settings = { max_lines = 2; };
-      };
-      rainbow-delimiters.enable = true;
-      lazygit = {
-        enable = true;
-      };
-      telescope = {
-        enable = true;
-        extensions.fzf-native = { enable = true; };
-      };
-    };
-    keymaps = [
-      # telescope
-      {
-        action = "<cmd>FZF<CR>";
-        key = "<leader>ff";
-      }
-      {
-        action = "<cmd>Telescope live_grep<CR>";
-        key = "<leader>fg";
-      }
-      {
-        action = "<cmd>Telescope buffers<CR>";
-        key = "<leader>fb";
-      }
-      {
-        action = "<cmd>Telescope help_tags<CR>";
-        key = "<leader>fh";
-      }
-    ];
-  };
+#   programs.nixvim = {
+#     enable = true;
+#     globals = {
+#       mapleader = " ";
+#       direnv_auto = 1;
+#       direnv_silent_load = 0;
+#     };
+#     opts = {
+#       number = true;         # Show line numbers
+#       relativenumber = true; # Show relative line numbers
+#       shiftwidth = 2;        # Tab width should be 2
+#     };
+#     plugins = {
+#       trouble.enable = true;
+#       bufferline.enable = true;
+#       nvim-tree = {
+#         enable = true;
+#         openOnSetupFile = true;
+#         autoReloadOnWrite = true;
+#       };
+#       gitsigns = {
+#         enable = true;
+#         settings = {
+#           current_line_blame = true;
+#           trouble = true;
+#         };
+#       };
+#       treesitter = {
+#         enable = true;
+#         nixGrammars = true;
+#         settings = {
+#           highlight.enable = true;
+#           indent.enable = true;
+#         };
+#       };
+#       treesitter-context = {
+#         enable = true;
+#         settings = { max_lines = 2; };
+#       };
+#       rainbow-delimiters.enable = true;
+#       lazygit = {
+#         enable = true;
+#       };
+#       telescope = {
+#         enable = true;
+#         extensions.fzf-native = { enable = true; };
+#       };
+#     };
+#     keymaps = [
+#       # telescope
+#       {
+#         action = "<cmd>FZF<CR>";
+#         key = "<leader>ff";
+#       }
+#       {
+#         action = "<cmd>Telescope live_grep<CR>";
+#         key = "<leader>fg";
+#       }
+#       {
+#         action = "<cmd>Telescope buffers<CR>";
+#         key = "<leader>fb";
+#       }
+#       {
+#         action = "<cmd>Telescope help_tags<CR>";
+#         key = "<leader>fh";
+#       }
+#     ];
+#   };
     
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

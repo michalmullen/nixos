@@ -32,12 +32,9 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      unstable.vscode
-      obsidian
       localsend
       discord
       libreoffice
-      kate
       wine
       wine64
       lutris
@@ -54,7 +51,7 @@
 
   home-manager.users.po252 = {
     imports = [
-      ../../home/home.nix
+      ../../home/home2.nix
     ];
   };
 
@@ -67,9 +64,11 @@
     remmina
     rpi-imager
     prismlauncher
-    spotify
     reaper
     davinci-resolve
+    spotify
+    vscode
+    obsidian
   ];
 
   # This value determines the NixOS release from which the default
