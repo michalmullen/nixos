@@ -41,9 +41,10 @@
       obsidian
       localsend
       discord
-      unstable.anytype
       libreoffice
       qtpass
+      xorg.xkill
+      winbox
     ];
   };
 
