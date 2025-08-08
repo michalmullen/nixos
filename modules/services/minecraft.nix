@@ -1,10 +1,9 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
-
 {
   services.minecraft-server = {
     enable = true;
     eula = true; # set to true if you agree to Mojang's EULA: https://account.mojang.com/documents/minecraft_eula
     declarative = true;
+    openFirewall = true;
 
     # see here for more info: https://minecraft.gamepedia.com/Server.properties#server.properties
     serverProperties = {
@@ -17,7 +16,7 @@
       # Exact details as to how will be explained later. If you want
       # you can replace this with another password.
       "rcon.password" = "hunter2";
-      level-seed = "10292992";
+      level-seed = "10292912";
     };
   };
 }

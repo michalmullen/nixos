@@ -60,7 +60,7 @@
 
   programs.git = {
     enable = true;
-    userName = "Mitchell Mullen";
+    userName = "michalmullen";
     userEmail = "michalmullen@gmail.com";
   };
 

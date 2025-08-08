@@ -13,6 +13,7 @@
     stow
     starship
     nushell
+    kubeconform
   ];
 
   programs = {

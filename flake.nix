@@ -2,11 +2,11 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -44,18 +44,5 @@
         ./hosts/desktop/configuration.nix
       ];
     };
-    homeConfigurations.lenovo-p1  = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { inherit system; };
-
-        modules = [
-          # Specify the path to your home configuration here:
-          ./home/work.nix
-          {
-            home = {
-              homeDirectory = "/home/${username}";
-            };
-          }
-        ];
-      };
-    };
+  };
 }

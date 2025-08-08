@@ -9,5 +9,5 @@
   services.xserver.desktopManager.plasma5.enable = true;
 
   # Enable plasma integration firefox
-  nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
+  # nixpkgs.config.firefox.enablePlasmaBrowserIntegration = true;
 }
