@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../modules/default/gnome.nix
+      ./../../modules/default/kde.nix
       ./../../modules/default/location.nix
       ./../../modules/default/networking.nix
       ./../../modules/default/nix.nix
@@ -53,7 +53,7 @@
 
   home-manager.users.po252 = {
     imports = [
-      ../../home/home.nix
+      ../../home/home2.nix
     ];
   };
 
