@@ -53,6 +53,8 @@
     pkgs.gh
     pkgs.aichat
     pkgs.fzf
+    pkgs.pass
+    pkgs.pinentry-gtk2
 
     # applications
     pkgs.alacritty
