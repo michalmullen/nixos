@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  # boot.kernelParams= [ "pcie_aspm=off" ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f682e3b4-61d9-4341-bc17-ed014634490d";
@@ -40,4 +41,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.bluetooth.enable = true;
 }
