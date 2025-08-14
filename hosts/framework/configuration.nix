@@ -21,7 +21,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices."luks-b70cdad2-38a7-4c5a-b8d7-8c72e195a4d9".device = "/dev/disk/by-uuid/b70cdad2-38a7-4c5a-b8d7-8c72e195a4d9";
   networking.hostName = "framework"; # Define your hostname.
 
   # https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za
@@ -76,5 +75,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
