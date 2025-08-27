@@ -12,6 +12,7 @@
       ./../../modules/default/location.nix
       ./../../modules/default/networking.nix
       ./../../modules/default/nix.nix
+      ./../../modules/default/nfs.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/gnupg.nix
     ];
