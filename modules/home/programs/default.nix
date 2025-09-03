@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./alacritty.nix
+    ./ghostty.nix
     ./git.nix
     ./nixvim.nix
     ./shell.nix

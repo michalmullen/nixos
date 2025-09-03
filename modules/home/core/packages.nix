@@ -26,10 +26,10 @@
     fzf
     spotify
     temurin-bin-21
+    ghostty
 
     # applications
     alacritty
-    brave
     vscode
     jetbrains.idea-ultimate
     jetbrains.pycharm-professional
