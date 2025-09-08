@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars, ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = config.vars.username;
-    userEmail = config.vars.email;
+    userName = vars.users.primary.username;
+    userEmail = vars.users.primary.email;
     aliases = {
       ci = "commit";
       co = "checkout";

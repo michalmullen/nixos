@@ -15,32 +15,43 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
    let
-      # Replace with your username
-      username = "po252";
+      # Import global variables
+      vars = import ./lib/vars.nix;
 
-      # Replace with the fitting architecture
-      system = "x86_64-linux";
+      # Common system configuration
+      system = vars.system.architecture;
+
+      # Helper function to create NixOS configuration
+      mkNixosConfig = { hostName, modules ? [], extraSpecialArgs ? {} }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit inputs vars;
+          } // extraSpecialArgs;
+          modules = [
+            inputs.home-manager.nixosModules.default
+          ] ++ modules;
+        };
     in
    {
-    nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+    nixosConfigurations.framework = mkNixosConfig {
+      hostName = "framework";
       modules = [
-        inputs.home-manager.nixosModules.default
         inputs.nixos-hardware.nixosModules.framework-13-7040-amd
         ./hosts/framework/configuration.nix
       ];
     };
-    nixosConfigurations.prodesk = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+
+    nixosConfigurations.prodesk = mkNixosConfig {
+      hostName = "prodesk";
       modules = [
-        inputs.home-manager.nixosModules.default
         ./hosts/prodesk/configuration.nix
       ];
     };
-    nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+
+    nixosConfigurations.desktop = mkNixosConfig {
+      hostName = "desktop";
       modules = [
-        inputs.home-manager.nixosModules.default
         ./hosts/desktop/configuration.nix
       ];
     };
