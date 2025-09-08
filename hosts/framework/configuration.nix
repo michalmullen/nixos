@@ -54,7 +54,7 @@
   # Use the new modular home configuration
   home-manager.users.${vars.users.primary.username} = {
     imports = [
-      ../../modules/home
+      ../../home
     ];
   };
 
