@@ -3,7 +3,7 @@
 {
   programs.git = {
     enable = true;
-    userName = vars.users.primary.username;
+    userName = if vars.users.primary ? gitusername then vars.users.primary.gitusername else vars.users.primary.username;
     userEmail = vars.users.primary.email;
     aliases = {
       ci = "commit";
