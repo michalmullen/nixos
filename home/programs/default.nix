@@ -7,5 +7,6 @@
     ./nixvim.nix
     ./shell.nix
     ./tmux.nix
+    ./ghostty.nix
   ];
 }
