@@ -3,7 +3,7 @@
   # User configuration
   users = {
     primary = {
-      username = "mitch";
+      username = "po252";
       fullName = "Mitchell Mullen";
       email = "michalmullen@gmail.com";
     };

@@ -19,7 +19,7 @@
       vars = import ./lib/vars.nix;
 
       # Common system configuration
-      system = vars.system.architecture;
+      system = "x86_64-linux";
 
       # Helper function to create NixOS configuration
       mkNixosConfig = { hostName, modules ? [], extraSpecialArgs ? {} }:
