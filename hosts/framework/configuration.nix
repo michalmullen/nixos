@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running 'nixos-help').
 
-{ config, pkgs, vars, ... }:
+{ inputs, config, pkgs, vars, ... }:
 
 {
   imports =
@@ -52,10 +52,15 @@
   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 
   # Use the new modular home configuration
-  home-manager.users.${vars.users.primary.username} = {
-    imports = [
-      ../../home
-    ];
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs vars; };
+    users.${vars.users.primary.username} = {
+      imports = [
+        ../../home
+      ];
+    };
   };
 
   # List packages installed in system profile. To search, run:
