@@ -26,6 +26,7 @@
     fzf
     spotify
     temurin-bin-21
+    mc
 
     # applications
     alacritty
