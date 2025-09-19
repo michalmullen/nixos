@@ -13,3 +13,6 @@ cleanup:
     nix-store --gc
     # sudo nix-collect-garbage -d
     # nix-store --verify --check-contents
+
+remotly-test:
+    nix build .#nixosConfigurations.framework.config.system.build.toplevel

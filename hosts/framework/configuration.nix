@@ -15,6 +15,7 @@
       ./../../modules/default/nfs.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/gnupg.nix
+      ./../../modules/hardware/samsung-printer.nix
     ];
 
   # Bootloader.
@@ -27,14 +28,14 @@
   # https://knowledgebase.frame.work/en_us/updating-fingerprint-reader-firmware-on-linux-for-13th-gen-and-amd-ryzen-7040-series-laptops-HJrvxv_za
   services.fwupd.enable = true;
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # Enable Samsung printer support
+  hardware.samsung-printer.enable = true;
 
   # Define a user account using global variables
   users.users.${vars.users.primary.username} = {
     isNormalUser = true;
     description = vars.users.primary.fullName;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "lp" ];
     packages = with pkgs; [
       firefox
       vscode
