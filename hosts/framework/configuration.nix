@@ -15,6 +15,7 @@
       ./../../modules/default/nfs.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/gnupg.nix
+      ./../../modules/hardware/samsung-printer.nix
     ];
 
   # Bootloader.
@@ -28,8 +29,8 @@
   services.fwupd.enable = true;
 
   # Enable Samsung printer support
-  # hardware.samsung-printer.enable = true;
-  # programs.nix-ld.enable = true;
+  hardware.samsung-printer.enable = true;
+  programs.nix-ld.enable = true;
 
   # Define a user account using global variables
   users.users.${vars.users.primary.username} = {
