@@ -37,6 +37,7 @@
     obsidian
     super-productivity
     postman
+    vlc
   ];
 
   programs.browserpass.enable = true;
