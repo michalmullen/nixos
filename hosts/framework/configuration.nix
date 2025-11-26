@@ -12,7 +12,7 @@
       ./../../modules/default/location.nix
       ./../../modules/default/networking.nix
       ./../../modules/default/nix.nix
-      ./../../modules/default/nfs.nix
+      # ./../../modules/default/nfs.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/gnupg.nix
       ./../../modules/hardware/samsung-printer.nix
@@ -50,9 +50,6 @@
     ];
   };
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
-
   # Use the new modular home configuration
   home-manager = {
     useGlobalPkgs = true;
@@ -72,7 +69,6 @@
     wget
     fwupd
     remmina
-    rpi-imager
     prismlauncher
     spotify
     reaper

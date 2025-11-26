@@ -31,7 +31,6 @@
     # applications
     alacritty
     brave
-    vscode
     jetbrains.idea-ultimate
     jetbrains.pycharm-professional
     obsidian
@@ -39,6 +38,11 @@
     postman
     vlc
   ];
+
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
+  };
 
   programs.browserpass.enable = true;
 
