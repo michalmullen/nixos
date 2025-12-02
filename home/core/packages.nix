@@ -40,11 +40,6 @@
     vlc
   ];
 
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode.fhs;
-  };
-
   programs.browserpass.enable = true;
 
   # If you have Java configuration elsewhere, update it too:
