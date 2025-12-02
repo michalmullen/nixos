@@ -31,7 +31,7 @@
     # applications
     alacritty
     brave
-    vscode
+    vscode-fhs
     jetbrains.idea-ultimate
     jetbrains.pycharm-professional
     obsidian
