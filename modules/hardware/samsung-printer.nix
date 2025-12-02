@@ -46,5 +46,8 @@ with lib;
 
     # Add lp group for printer access
     users.groups.lp = {};
+
+    hardware.sane.enable = true;
+    hardware.sane.extraBackends = [ pkgs.sane-backends ];
   };
 }

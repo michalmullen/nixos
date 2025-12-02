@@ -23,7 +23,7 @@
     ];
 
     extraConfig = ''
-      set-option -g default-shell ${pkgs.nushell}/bin/nu
+      set-option -g default-shell "${pkgs.nushell}/bin/nu"
       set-option -g default-command "${pkgs.nushell}/bin/nu -i"
       set-option -sa terminal-overrides ",xterm*:Tc"
       set -g status-keys vi

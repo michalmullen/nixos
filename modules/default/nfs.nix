@@ -13,5 +13,5 @@
 
   networking.networkmanager.enable = true; networking.hosts = { "192.168.15.50" = [ "truenas" ]; };
 
-  fileSystems."/home/po252/nfs" = { device = "truenas:/mnt/storage/storage-share"; fsType = "nfs"; options = [ "x-systemd.automount" "noauto" ]; }; 
+  fileSystems."/home/po252/nfs" = { device = "truenas:/mnt/storage/nfs"; fsType = "nfs"; options = [ "x-systemd.automount" "noauto" ]; }; 
 }
