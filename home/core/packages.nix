@@ -24,20 +24,21 @@
     gh
     aichat
     fzf
-    spotify
     temurin-bin-21
     mc
+    terraform
 
     # applications
     alacritty
     brave
-    vscode
     jetbrains.idea-ultimate
     jetbrains.pycharm-professional
     obsidian
-    super-productivity
     postman
+    spotify
   ];
+
+  programs.browserpass.enable = true;
 
   # If you have Java configuration elsewhere, update it too:
   programs.java = {
