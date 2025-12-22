@@ -39,14 +39,13 @@
     extraGroups = [ "networkmanager" "wheel" "lp" ];
     packages = with pkgs; [
       firefox
-      vscode
       obsidian
       localsend
       discord
       libreoffice
       qtpass
       xorg.xkill
-      winbox
+      winbox4
     ];
   };
 
