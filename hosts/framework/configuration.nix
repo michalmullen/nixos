@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../modules/default/kde.nix
+      inputs.omarchy-nix.nixosModules.default
       ./../../modules/default/location.nix
       ./../../modules/default/networking.nix
       ./../../modules/default/nix.nix
@@ -49,6 +49,13 @@
     ];
   };
 
+  # Configure Omarchy
+  omarchy = {
+    full_name = vars.users.primary.fullName;
+    email_address = vars.users.primary.email;
+    theme = "tokyo-night";
+  };
+
   # Use the new modular home configuration
   home-manager = {
     useGlobalPkgs = true;
@@ -56,7 +63,8 @@
     extraSpecialArgs = { inherit inputs vars; };
     users.${vars.users.primary.username} = {
       imports = [
-        ../../home
+        inputs.omarchy-nix.homeManagerModules.default
+        ../../home/framework.nix
       ];
     };
   };
