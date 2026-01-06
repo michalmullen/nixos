@@ -6,4 +6,7 @@
     ./core
     ./programs
   ];
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 }
