@@ -1,9 +1,10 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Enable sound with pipewire.
   # sound.enable = true; # Deprecated: no longer has any effect
-  hardware.pulseaudio.enable = false;
+  # hardware.pulseaudio.enable = false; # Deprecated: use services.pulseaudio
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
