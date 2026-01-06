@@ -25,6 +25,12 @@
     };
   };
 
+  programs.atuin = {
+    enable = true;
+    enableNushellIntegration = true;
+    enableBashIntegration = true;
+  };
+
   programs.nushell = {
     enable = true;
     shellAliases = {

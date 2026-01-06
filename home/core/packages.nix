@@ -31,11 +31,9 @@
     # applications
     alacritty
     brave
-    jetbrains.idea-ultimate
-    jetbrains.pycharm-professional
-    obsidian
+    jetbrains.idea
+    jetbrains.pycharm
     postman
-    spotify
   ];
 
   programs.browserpass.enable = true;

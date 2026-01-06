@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./alacritty.nix
+    #./alacritty.nix
     ./git.nix
     ./nixvim.nix
     ./shell.nix
     ./tmux.nix
-    ./ghostty.nix
+    #./ghostty.nix
   ];
 }
