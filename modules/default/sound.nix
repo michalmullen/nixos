@@ -2,7 +2,7 @@
 
 {
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true; # Deprecated: no longer has any effect
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

@@ -30,7 +30,7 @@
       vars = import ./lib/vars.nix;
 
       # Common system configuration
-      system = "x86_64-linux";
+      system = vars.system.architecture;
 
       # Helper function to create NixOS configuration
       mkNixosConfig = { hostName, modules ? [], extraSpecialArgs ? {} }:

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, vars, ... }:
 
 {
   imports =
@@ -13,7 +13,8 @@
       ./../../modules/default/networking.nix
       ./../../modules/default/nix.nix
       ./../../modules/default/nixpkgs.nix
-      ./../../modules/services/searx.nix
+      ./../../modules/default/sound.nix
+      # ./../../modules/services/searx.nix
       ./../../modules/services/minecraft.nix
       ./../../modules/services/immich.nix
     ];
@@ -30,23 +31,19 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+  
+  # Enable Nix-ld
+  programs.nix-ld.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.po252 = {
+  users.users.${vars.users.primary.username} = {
     isNormalUser = true;
-    description = "Mitchell Mullen";
+    description = vars.users.primary.fullName;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
@@ -59,10 +56,15 @@
     ];
   };
 
-  home-manager.users.po252 = {
-    imports = [
-      ../../home/home.nix
-    ];
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs vars; };
+    users.${vars.users.primary.username} = {
+      imports = [
+        ../../home/default.nix
+      ];
+    };
   };
 
   # List packages installed in system profile. To search, run:
@@ -97,6 +99,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = vars.system.stateVersion; # Did you read the comment?
 
 }

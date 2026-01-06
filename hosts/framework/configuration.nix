@@ -15,6 +15,7 @@
       # ./../../modules/default/nfs.nix
       ./../../modules/default/nixpkgs.nix
       ./../../modules/default/gnupg.nix
+      ./../../modules/default/sound.nix
       ./../../modules/hardware/samsung-printer.nix
     ];
 

@@ -6,7 +6,7 @@
   # We only import core settings and non-conflicting programs
   
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./core
     # Don't import ./programs to avoid conflicts with Omarchy
     # If you want specific programs, import them individually here

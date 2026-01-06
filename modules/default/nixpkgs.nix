@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
     nixpkgs = {
@@ -8,9 +8,14 @@
       permittedInsecurePackages = [
         "electron-25.9.0"
       ];
-      packageOverrides = pkgs: {
-        unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {config.allowUnfree = true;};
-      };      
     };
+    overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = prev.system;
+          config.allowUnfree = true;
+        };
+      })
+    ];
   };
 }

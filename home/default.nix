@@ -2,9 +2,11 @@
 
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     ./core
-    ./programs
+    ./shell
+    ./applications/alacritty.nix
+    ./applications/ghostty.nix
   ];
 
   # Allow unfree packages
