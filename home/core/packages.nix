@@ -24,18 +24,12 @@
     gh
     aichat
     fzf
-    spotify
     temurin-bin-21
     mc
 
     # applications
-    alacritty
-    brave
-    vscode-fhs
     jetbrains.idea-ultimate
     jetbrains.pycharm-professional
-    obsidian
-    super-productivity
     postman
     vlc
   ];
