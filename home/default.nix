@@ -9,6 +9,5 @@
     ./applications/ghostty
   ];
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # Note: nixpkgs.config is set at system level when using useGlobalPkgs
 }
