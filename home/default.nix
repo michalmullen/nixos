@@ -5,8 +5,8 @@
     inputs.nixvim.homeModules.nixvim
     ./core
     ./shell
-    ./applications/alacritty.nix
-    ./applications/ghostty.nix
+    ./applications/alacritty
+    ./applications/ghostty
   ];
 
   # Allow unfree packages

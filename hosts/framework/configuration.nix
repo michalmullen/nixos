@@ -9,14 +9,14 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.omarchy-nix.nixosModules.default
-      ./../../modules/default/location.nix
-      ./../../modules/default/networking.nix
-      ./../../modules/default/nix.nix
+      ./../../modules/default/location
+      ./../../modules/default/networking
+      ./../../modules/default/nix
       # ./../../modules/default/nfs.nix
-      ./../../modules/default/nixpkgs.nix
-      ./../../modules/default/gnupg.nix
-      ./../../modules/default/sound.nix
-      ./../../modules/hardware/samsung-printer.nix
+      ./../../modules/default/nixpkgs
+      ./../../modules/default/gnupg
+      ./../../modules/default/sound
+      ./../../modules/hardware/samsung-printer
     ];
 
   # Bootloader.

@@ -8,15 +8,15 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../modules/default/gnome.nix
-      ./../../modules/default/location.nix
-      ./../../modules/default/networking.nix
-      ./../../modules/default/nix.nix
-      ./../../modules/default/nixpkgs.nix
-      ./../../modules/default/sound.nix
+      ./../../modules/default/gnome
+      ./../../modules/default/location
+      ./../../modules/default/networking
+      ./../../modules/default/nix
+      ./../../modules/default/nixpkgs
+      ./../../modules/default/sound
       # ./../../modules/services/searx.nix
-      ./../../modules/services/minecraft.nix
-      ./../../modules/services/immich.nix
+      ./../../modules/services/minecraft
+      ./../../modules/services/immich
     ];
 
   # Bootloader.

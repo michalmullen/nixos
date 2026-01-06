@@ -7,13 +7,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../modules/default/location.nix
-      ./../../modules/default/networking.nix
-      ./../../modules/default/nix.nix
-      ./../../modules/default/nixpkgs.nix
-      ./../../modules/default/kde.nix
-      ./../../modules/default/sound.nix
-      ./../../modules/default/gnupg.nix
+      ./../../modules/default/location
+      ./../../modules/default/networking
+      ./../../modules/default/nix
+      ./../../modules/default/nixpkgs
+      ./../../modules/default/kde
+      ./../../modules/default/sound
+      ./../../modules/default/gnupg
     ];
 
   # Bootloader.

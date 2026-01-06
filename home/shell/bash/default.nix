@@ -1,47 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Shell tools configuration
-  programs.carapace = {
-    enable = true;
-    enableNushellIntegration = true;
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableNushellIntegration = true;
-    enableBashIntegration = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    enableBashIntegration = true;
-    settings = {
-      add_newline = true;
-      character = {
-        success_symbol = "[➜](bold green)";
-        error_symbol = "[➜](bold red)";
-      };
-    };
-  };
-
-  programs.atuin = {
-    enable = true;
-    enableNushellIntegration = true;
-    enableBashIntegration = true;
-  };
-
-  programs.nushell = {
-    enable = true;
-    shellAliases = {
-      cd = "z";
-      ll = "ls -la";
-      cat = "bat -p";
-      vi = "nvim";
-      lz = "lazygit";
-    };
-  };
-
   programs.bash = {
     enable = true;
     enableCompletion = true;

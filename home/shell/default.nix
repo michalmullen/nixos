@@ -2,11 +2,14 @@
 
 {
   imports = [
-    #./alacritty.nix
-    ./git.nix
-    ./nixvim.nix
-    ./shell.nix
-    ./tmux.nix
-    #./ghostty.nix
+    ./git
+    ./nixvim
+    ./tmux
+    ./carapace
+    ./zoxide
+    ./starship
+    ./atuin
+    ./nushell
+    ./bash
   ];
 }
