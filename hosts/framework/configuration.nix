@@ -8,10 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../modules/default/kde.nix
-      ./../../modules/default/location.nix
-      ./../../modules/default/networking.nix
-      ./../../modules/default/nix.nix
+      ./../../modules/default/kde
+      ./../../modules/default/location
+      ./../../modules/default/networking
+      ./../../modules/default/nix
       # ./../../modules/default/nfs.nix
       ./../../modules/default/nixpkgs
       ./../../modules/default/gnupg
