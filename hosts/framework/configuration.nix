@@ -39,7 +39,7 @@
     description = vars.users.primary.fullName;
     extraGroups = [ "networkmanager" "wheel" "lp" ];
     packages = with pkgs; [
-      firefox
+      brave
       obsidian
       localsend
       discord
