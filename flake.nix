@@ -16,9 +16,14 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixvim, sops-nix, ... }@inputs:
    let
       # Import global variables
       vars = import ./lib/vars.nix;
@@ -35,6 +40,7 @@
           } // extraSpecialArgs;
           modules = [
             inputs.home-manager.nixosModules.default
+            sops-nix.nixosModules.sops
           ] ++ modules;
         };
     in

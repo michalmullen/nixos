@@ -14,6 +14,7 @@
       ./../../modules/default/kde
       ./../../modules/default/sound
       ./../../modules/default/gnupg
+      ./../../modules/default/sops
     ];
 
   # Bootloader.

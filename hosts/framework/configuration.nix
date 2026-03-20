@@ -17,6 +17,7 @@
       ./../../modules/default/gnupg
       ./../../modules/default/sound
       ./../../modules/hardware/samsung-printer
+      ./../../modules/default/sops
     ];
 
   # Bootloader.

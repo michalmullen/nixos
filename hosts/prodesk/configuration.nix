@@ -14,6 +14,7 @@
       ./../../modules/default/nix
       ./../../modules/default/nixpkgs
       ./../../modules/default/sound
+      ./../../modules/default/sops
       # ./../../modules/services/searx.nix
       ./../../modules/services/minecraft
       ./../../modules/services/immich

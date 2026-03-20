@@ -1,0 +1,26 @@
+# .sops.yaml — encryption recipients for all secrets files.
+#
+# Replace the PLACEHOLDER values with real GPG fingerprints.
+# To get your personal fingerprint:
+#   gpg --list-keys michalmullen@gmail.com
+#
+# Machine fingerprints come from the bootstrap step (sops-init-gpg-key).
+# See the setup command list in the feature/sops-secrets branch for details.
+
+keys:
+  # Your personal admin key — used to edit secrets from your workstation
+  - &admin REPLACE_WITH_YOUR_PERSONAL_GPG_FINGERPRINT
+
+  # Per-machine keys — generated during bootstrap with sops-init-gpg-key
+  - &framework REPLACE_WITH_FRAMEWORK_MACHINE_FINGERPRINT
+  - &desktop   REPLACE_WITH_DESKTOP_MACHINE_FINGERPRINT
+  - &prodesk   REPLACE_WITH_PRODESK_MACHINE_FINGERPRINT
+
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    key_groups:
+      - pgp:
+        - *admin
+        - *framework
+        - *desktop
+        - *prodesk

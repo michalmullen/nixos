@@ -26,6 +26,9 @@
     fzf
     temurin-bin-21
     mc
+    sops
+    age
+    ssh-to-age
 
     # applications
     postman
