@@ -28,8 +28,6 @@
     mc
 
     # applications
-    jetbrains.idea-ultimate
-    jetbrains.pycharm-professional
     postman
     vlc
   ];

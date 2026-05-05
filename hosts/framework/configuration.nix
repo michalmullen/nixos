@@ -8,7 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.omarchy-nix.nixosModules.default
+      ./../../modules/default/kde
       ./../../modules/default/location
       ./../../modules/default/networking
       ./../../modules/default/nix
@@ -39,7 +39,7 @@
     description = vars.users.primary.fullName;
     extraGroups = [ "networkmanager" "wheel" "lp" ];
     packages = with pkgs; [
-      firefox
+      brave
       obsidian
       localsend
       discord
@@ -50,13 +50,6 @@
     ];
   };
 
-  # Configure Omarchy
-  omarchy = {
-    full_name = vars.users.primary.fullName;
-    email_address = vars.users.primary.email;
-    theme = "tokyo-night";
-  };
-
   # Use the new modular home configuration
   home-manager = {
     useGlobalPkgs = true;
@@ -64,8 +57,7 @@
     extraSpecialArgs = { inherit inputs vars; };
     users.${vars.users.primary.username} = {
       imports = [
-        inputs.omarchy-nix.homeManagerModules.default
-        ../../home/framework.nix
+        ../../home
       ];
     };
   };
