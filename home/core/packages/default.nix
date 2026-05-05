@@ -26,6 +26,9 @@
     fzf
     temurin-bin-21
     mc
+    terraform
+    helm
+    
 
     # applications
     postman

@@ -20,7 +20,7 @@
       nvim-tree = {
         enable = true;
         openOnSetupFile = true;
-        settings.auto_reload_on_write = true;
+        autoReloadOnWrite = true;
       };
       gitsigns = {
         enable = true;
