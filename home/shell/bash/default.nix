@@ -31,6 +31,9 @@
       
       # Custom aliases from .bash_aliases
       myonedrive = "no_proxy=graph.microsoft.com,deutscheboerse-my.sharepoint.com onedrive --synchronize";
+
+      # gh-dash targeting enterprise GitHub
+      ghd = "GH_HOST=github.deutsche-boerse.de gh dash";
     };
     sessionVariables = {
       HISTCONTROL = "ignoreboth";
