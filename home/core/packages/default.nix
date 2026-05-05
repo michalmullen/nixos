@@ -27,8 +27,7 @@
     temurin-bin-21
     mc
     terraform
-    helm
-    
+    openshift
 
     # applications
     postman
