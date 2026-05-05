@@ -13,7 +13,7 @@
     starship
     zoxide
     nnn
-    google-cloud-sdk
+    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     kubectl
     kustomize
     k9s
@@ -26,6 +26,8 @@
     fzf
     temurin-bin-21
     mc
+    terraform
+    openshift
 
     # applications
     postman
