@@ -9,6 +9,7 @@
       cat = "bat -p";
       vi = "nvim";
       lz = "lazygit";
+      ghd = "GH_HOST=github.deutsche-boerse.de gh dash";
     };
   };
 }
