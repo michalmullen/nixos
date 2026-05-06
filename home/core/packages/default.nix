@@ -27,6 +27,7 @@
     mc
     terraform
     openshift
+    argocd
 
     # applications
     postman
