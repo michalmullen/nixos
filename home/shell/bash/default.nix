@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars, ... }:
 
 {
   programs.bash = {
@@ -33,7 +33,7 @@
       myonedrive = "no_proxy=graph.microsoft.com,deutscheboerse-my.sharepoint.com onedrive --synchronize";
 
       # gh-dash targeting enterprise GitHub
-      ghd = "GH_HOST=github.deutsche-boerse.de gh dash";
+      ghd = vars.aliases.ghb;
     };
     sessionVariables = {
       HISTCONTROL = "ignoreboth";

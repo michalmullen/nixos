@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars,... }:
 
 {
   programs.nushell = {
@@ -9,7 +9,7 @@
       cat = "bat -p";
       vi = "nvim";
       lz = "lazygit";
-      ghd = "GH_HOST=github.deutsche-boerse.de gh dash";
+      ghd = vars.aliases.ghb;
     };
   };
 }

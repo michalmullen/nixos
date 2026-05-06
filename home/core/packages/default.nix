@@ -21,7 +21,6 @@
     lazygit
     bat
     tdrop
-    gh
     aichat
     fzf
     temurin-bin-21
@@ -33,6 +32,11 @@
     postman
     vlc
   ];
+
+  programs.gh = {
+    enable = true;
+    extensions = [ pkgs.gh-dash ];
+  };
 
   programs.browserpass.enable = true;
 
