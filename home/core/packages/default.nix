@@ -28,6 +28,7 @@
     terraform
     openshift
     argocd
+    copilot-cli
 
     # applications
     postman
