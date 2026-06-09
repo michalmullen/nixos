@@ -28,6 +28,18 @@
       cat = "bat -p";
       vi = "nvim";
       lz = "lazygit";
+
+      # git aliases      
+      g = "git";
+      ga = "git add";
+      gb = "git branch";    
+      gc = "git commit";
+      gco = "git checkout";
+      gd = "git diff";
+      gl = "git log --oneline --graph --decorate";
+      gp = "git push";
+      gst = "git status";
+      gcl = "git clone";
       
       # Custom aliases from .bash_aliases
       myonedrive = "no_proxy=graph.microsoft.com,deutscheboerse-my.sharepoint.com onedrive --synchronize";
@@ -41,6 +53,11 @@
       SDKMAN_DIR = "$HOME/.sdkman";
     };
     initExtra = ''
+      # Git clone shorthand for RiskIT org
+      gcl() {
+        git clone "git@github.deutsche-boerse.de:RiskIT/$1.git"
+      }
+
       # Color prompt setup
       case "$TERM" in
           xterm-color|*-256color) color_prompt=yes;;
