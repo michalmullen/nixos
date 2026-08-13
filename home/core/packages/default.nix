@@ -20,6 +20,8 @@
     just
     lazygit
     bat
+    ripgrep
+    yq
     tdrop
     aichat
     fzf
@@ -28,7 +30,7 @@
     terraform
     openshift
     argocd
-    copilot-cli
+    github-copilot-cli
 
     # applications
     postman
