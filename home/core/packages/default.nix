@@ -31,6 +31,7 @@
     openshift
     argocd
     github-copilot-cli
+    freerdp
 
     # applications
     postman
