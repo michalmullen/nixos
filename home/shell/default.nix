@@ -19,8 +19,8 @@ let
     gcl = "git clone";
 
     ghd = vars.aliases.ghb;
-    oc-login-sit = "oc login --token=sha256~jSc7s5H4YmJUFV5p4vWY-mngaU1d7WgB3nLalJcN4V4 --server=https://api.g-sit-1.cool.dev.gcp.dbgcloud.io:6443";
-    oc-login-dev = "oc login --token=sha256~jSc7s5H4YmJUFV5p4vWY-mngaU1d7WgB3nLalJcN4V4 --server=https://api.g-dev-1.cool.dev.gcp.dbgcloud.io:6443";
+    oc-login-sit = "oc login --web --server=https://api.g-sit-1.cool.dev.gcp.dbgcloud.io:6443";
+    oc-login-dev = "oc login --web --server=https://api.g-dev-1.cool.dev.gcp.dbgcloud.io:6443";
   };
 in {
   imports = [
