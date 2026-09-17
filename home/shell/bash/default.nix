@@ -1,4 +1,4 @@
-{ config, pkgs, vars, ... }:
+{ config, pkgs, sharedShellAliases, ... }:
 
 {
   programs.bash = {
@@ -11,9 +11,8 @@
       "histappend"
       "checkwinsize"
     ];
-    shellAliases = {
+    shellAliases = sharedShellAliases // {
       # Navigation aliases
-      cd = "z";
       ll = "ls -alF";
       la = "ls -A";
       l = "ls -CF";
@@ -24,28 +23,8 @@
       fgrep = "fgrep --color=auto";
       egrep = "egrep --color=auto";
       
-      # Tool aliases
-      cat = "bat -p";
-      vi = "nvim";
-      lz = "lazygit";
-
-      # git aliases      
-      g = "git";
-      ga = "git add";
-      gb = "git branch";    
-      gc = "git commit";
-      gco = "git checkout";
-      gd = "git diff";
-      gl = "git log --oneline --graph --decorate";
-      gp = "git push";
-      gst = "git status";
-      gcl = "git clone";
-      
       # Custom aliases from .bash_aliases
       myonedrive = "no_proxy=graph.microsoft.com,deutscheboerse-my.sharepoint.com onedrive --synchronize";
-
-      # gh-dash targeting enterprise GitHub
-      ghd = vars.aliases.ghb;
     };
     sessionVariables = {
       HISTCONTROL = "ignoreboth";

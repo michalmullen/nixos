@@ -1,15 +1,10 @@
-{ config, pkgs, vars,... }:
+{ config, pkgs, sharedShellAliases, ... }:
 
 {
   programs.nushell = {
     enable = true;
-    shellAliases = {
-      cd = "z";
+    shellAliases = sharedShellAliases // {
       ll = "ls -la";
-      cat = "bat -p";
-      vi = "nvim";
-      lz = "lazygit";
-      ghd = vars.aliases.ghb;
     };
   };
 }
